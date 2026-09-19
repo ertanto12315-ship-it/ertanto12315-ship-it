@@ -1,0 +1,6 @@
+{
+  "name": "Pemilihan Ketua OSIS SMP Negeri 3 Parang 2026/2027",
+  "description": "Portal Pemilihan Ketua OSIS SMP Negeri 3 Parang Tahun Pelajaran 2026/2027 dengan sistem integrasi 3 laptop dan bilik suara digital real-time.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

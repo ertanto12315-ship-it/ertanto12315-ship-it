@@ -1,0 +1,137 @@
+import { Candidate, Voter } from '../types';
+
+export const SCHOOL_INFO = {
+  name: 'SMP NEGERI 3 PARANG',
+  portalTitle: 'PEMILIHAN KETUA OSIS SMP NEGERI 3 PARANG TAHUN PELAJARAN 2026/2027',
+  address: 'Kecamatan Parang, Kabupaten Magetan, Jawa Timur',
+  logoUrl: 'https://iili.io/nFtT1MQ.jpg',
+  periode: '2026/2027',
+};
+
+export const CANDIDATES: Candidate[] = [
+  {
+    id: 1,
+    name: 'SELVIA OKTAVIANA EZZA AHZARA',
+    photo: 'https://iili.io/nI3xRe4.jpg',
+    visi: 'Mendidik manusia berbudi luhur tahu benar dan salah',
+    misi: 'mengadakan bakti sosial dan bakti lingkungan',
+    slogan: 'Mendidik Berbudi Luhur, Tahu Benar & Salah',
+  },
+  {
+    id: 2,
+    name: 'ALVIKA ELSA ANDRIANI',
+    photo: 'https://iili.io/nI3leCG.jpg',
+    visi: 'Mewujudkan Manusia yang memayu hayuning bawono',
+    misi: "Mengadakan kegiatan jum'at bersih dan bakti sosial",
+    slogan: 'Memayu Hayuning Bawono, Peduli Lingkungan',
+  },
+  {
+    id: 3,
+    name: 'RENDI SETIAWAN',
+    photo: 'https://iili.io/nI3M1dx.jpg',
+    visi: 'Mewujudakan siswa yang mepunyai karakter Pelajar Pancasila',
+    misi: 'Membuat monitoring perilaku siswa',
+    slogan: 'Karakter Pelajar Pancasila & Monitoring Perilaku',
+  },
+];
+
+// Helper to assign realistic classes for students (7A, 7B, 8A, 8B, 9A) based on birth year / index
+function assignClass(index: number, dob: string): string {
+  if (dob.startsWith('2014') || dob.startsWith('2013-1') || dob.startsWith('2013-05')) {
+    return (index % 2 === 0) ? 'Kelas VII-A' : 'Kelas VII-B';
+  } else if (dob.startsWith('2013') || dob.startsWith('2012-1') || dob.startsWith('2012-07')) {
+    return (index % 2 === 0) ? 'Kelas VIII-A' : 'Kelas VIII-B';
+  } else {
+    return (index % 2 === 0) ? 'Kelas IX-A' : 'Kelas IX-B';
+  }
+}
+
+export const INITIAL_VOTERS: Voter[] = [
+  { id: 1, name: 'ABI THOLIB', gender: 'L', code: '0139238228', pob: 'MAGETAN', dob: '2013-10-09', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 2, name: 'ADELIA DWI OKTAVIANI', gender: 'P', code: '3121579333', pob: 'MAGETAN', dob: '2013-10-03', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 3, name: 'AKHIRA WAHYUNI SAPUTRI', gender: 'P', code: '0124364699', pob: 'MAGETAN', dob: '2012-05-25', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 4, name: 'ALFITO NIYANDA PRADANA', gender: 'L', code: '0133035703', pob: 'MAGETAN', dob: '2013-04-16', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 5, name: 'ALIFIANDRA ALDRIC MAHARDIKA', gender: 'L', code: '0124766374', pob: 'Madiun', dob: '2012-03-25', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 6, name: 'ALINNISA FITROTUZZAHRA', gender: 'P', code: '0137235812', pob: 'MAGETAN', dob: '2013-05-22', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 7, name: 'ALISKA NUR AZHIZAH', gender: 'P', code: '0122344202', pob: 'MAGETAN', dob: '2012-05-28', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 8, name: 'ALVIKA ELSA ANDRIANI', gender: 'P', code: '0121314242', pob: 'BATU AGUNG', dob: '2012-11-01', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 9, name: 'ARISKY VIANNO PRATAMA', gender: 'L', code: '0129220864', pob: 'MAGETAN', dob: '2012-04-30', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 10, name: 'ARUMI DESTY CAESARIA', gender: 'P', code: '0116912857', pob: 'MAGETAN', dob: '2011-12-16', role: 'siswa', className: 'Kelas IX-A', hasVoted: false },
+  { id: 11, name: 'AURA REZKITA DIANDRA', gender: 'P', code: '0139341351', pob: 'MAGETAN', dob: '2013-12-14', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 12, name: 'CAESAR TRISTAN SATRIA SENA', gender: 'L', code: '0132026670', pob: 'MAGETAN', dob: '2013-05-29', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 13, name: 'DAFFA ATHALLA FRIYANDIKA', gender: 'L', code: '3120212891', pob: 'MAGETAN', dob: '2012-05-05', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 14, name: 'Desrina Anggita Putri', gender: 'P', code: '0121321774', pob: 'MAGETAN', dob: '2012-12-31', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 15, name: 'DEWI EKA MULYANI', gender: 'P', code: '0143874439', pob: 'MAGETAN', dob: '2014-02-21', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 16, name: 'DHESTY ANGGRAINI', gender: 'P', code: '0123771411', pob: 'MAGETAN', dob: '2012-12-16', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 17, name: 'ERLANGGA DIAN KUSUMA', gender: 'L', code: '3135124371', pob: 'BEKASI', dob: '2013-09-03', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 18, name: 'ERLITA ARSYABILLA', gender: 'P', code: '3147651059', pob: 'Magetan', dob: '2014-05-25', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 19, name: 'ERLIYANA ZHARIANTI', gender: 'P', code: '0123821631', pob: 'Magetan', dob: '2012-07-21', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 20, name: 'EVAN FAHMI PRASETYA', gender: 'L', code: '3139053593', pob: 'MAGETAN', dob: '2013-03-09', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 21, name: 'FADIL ADITYA FIRMANSYAH', gender: 'L', code: '0128167389', pob: 'MAGETAN', dob: '2012-06-04', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 22, name: 'FAUZAN EKA NURDIANSAH', gender: 'L', code: '0139317752', pob: 'MAGETAN', dob: '2013-10-05', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 23, name: 'ICHZA BACHTIAR AKBAR', gender: 'L', code: '0116660192', pob: 'MAGETAN', dob: '2011-11-25', role: 'siswa', className: 'Kelas IX-A', hasVoted: false },
+  { id: 24, name: "ISNAINI LAILA SEPTIANA RISMA'UL HUSNA", gender: 'P', code: '0113970172', pob: 'MAGETAN', dob: '2011-09-23', role: 'siswa', className: 'Kelas IX-B', hasVoted: false },
+  { id: 25, name: 'JIHAN HASNA ALFIYAH', gender: 'P', code: '0123345127', pob: 'Magetan', dob: '2011-06-09', role: 'siswa', className: 'Kelas IX-A', hasVoted: false },
+  { id: 26, name: 'KARISA EKA RAHMAWATI', gender: 'P', code: '3117289228', pob: 'MAGETAN', dob: '2012-05-21', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 27, name: 'Kellie liem', gender: 'P', code: '0123468725', pob: 'Metro', dob: '2012-02-26', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 28, name: 'Khanza Milan Arzaqi', gender: 'L', code: '0144546538', pob: 'Teluk Kuantan', dob: '2014-01-28', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 29, name: 'KHINZA DEVANATA RAHMAN', gender: 'L', code: '0115268520', pob: 'MAGETAN', dob: '2011-12-05', role: 'siswa', className: 'Kelas IX-B', hasVoted: false },
+  { id: 30, name: 'KHOIRI', gender: 'L', code: '0139865707', pob: 'Magetan', dob: '2013-10-31', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 31, name: 'MAHMUD ARYA ANUGERAH PUTRA PRATAMA', gender: 'L', code: '3134122918', pob: 'MAGETAN', dob: '2013-05-19', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 32, name: 'MAHMUD BUDHIARTO', gender: 'L', code: '0148052256', pob: 'MAGETAN', dob: '2014-01-16', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 33, name: 'MARSHELLA KIRANA PUTRI', gender: 'P', code: '0126279019', pob: 'MAGETAN', dob: '2012-08-17', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 34, name: 'MARWAA GUSTIARETA INDRYAWATI', gender: 'P', code: '0138730571', pob: 'MAGETAN', dob: '2013-08-16', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 35, name: 'MEXZI AYU ANGGRAINI', gender: 'P', code: '0123662470', pob: 'MAGETAN', dob: '2012-03-24', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 36, name: 'MUHAMAD DANANG SYAPUTRA', gender: 'L', code: '0113813948', pob: 'MAGETAN', dob: '2011-12-10', role: 'siswa', className: 'Kelas IX-A', hasVoted: false },
+  { id: 37, name: 'MUHAMMAD ALVIN BACHTIAR', gender: 'L', code: '3129331170', pob: 'MAGETAN', dob: '2012-03-11', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 38, name: 'MUHAMMAD ZAHIR ALFATIH', gender: 'L', code: '3125157679', pob: 'Magetan', dob: '2012-05-21', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 39, name: 'NATASYA EKA PRIANKA', gender: 'P', code: '0121106166', pob: 'Magetan', dob: '2012-09-23', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 40, name: 'NAUFAL PRADIPTA', gender: 'L', code: '0133041101', pob: 'MAGETAN', dob: '2013-01-19', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 41, name: "NAURA NABILA AL'HUSNAH", gender: 'P', code: '0126399895', pob: 'MAGETAN', dob: '2012-03-31', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 42, name: 'NAZWHA APRILIA FRIDAYANI', gender: 'P', code: '0123686392', pob: 'MAGETAN', dob: '2012-04-20', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 43, name: 'NEYSA CHRISTABEL LIORA', gender: 'P', code: '0135363674', pob: 'Magetan', dob: '2013-04-14', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 44, name: 'NOLIKA PUTRI SETIAWATI', gender: 'P', code: '0129869535', pob: 'Magetan', dob: '2012-07-13', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 45, name: 'OKTALIA HELDA SARFANDA', gender: 'P', code: '3114607977', pob: 'MAGETAN', dob: '2011-10-02', role: 'siswa', className: 'Kelas IX-B', hasVoted: false },
+  { id: 46, name: 'PRADIBTA GENIOSA MUHAJIR', gender: 'L', code: '3138229623', pob: 'MAGETAN', dob: '2013-05-31', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 47, name: 'PUSPA NOVIAN DHANIATI', gender: 'P', code: '0125390682', pob: 'Madiun', dob: '2012-11-27', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 48, name: 'QUEEN KEYYLA VALLERY JASMINE', gender: 'P', code: '3147872378', pob: 'MAGETAN', dob: '2014-10-29', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 49, name: 'RAFA ASYAM PAMUJI', gender: 'L', code: '0124268399', pob: 'Wonogiri', dob: '2012-04-01', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 50, name: 'RAFA EGA PURNAMA', gender: 'L', code: '0133586001', pob: 'PURWOREJO', dob: '2013-03-21', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 51, name: 'RENDI SETIAWAN', gender: 'L', code: '3136439268', pob: 'MAGETAN', dob: '2013-03-30', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 52, name: 'REVAN BAGUS MAULANA', gender: 'L', code: '3132447056', pob: 'MAGETAN', dob: '2013-03-20', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 53, name: 'REYHAN ARDIANSAH', gender: 'L', code: '3146229489', pob: 'MAGETAN', dob: '2014-01-14', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 54, name: 'REZA ADI SETIAWAN', gender: 'L', code: '3126665266', pob: 'Magetan', dob: '2012-05-07', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 55, name: 'REZA AHMAD AVIANTO', gender: 'L', code: '3121356122', pob: 'MAGETAN', dob: '2012-10-02', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 56, name: 'RIKY REVALDO', gender: 'L', code: '3133724591', pob: 'MUSI BANYUASIN', dob: '2013-10-17', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 57, name: 'RIZAL ARDIANSYAH', gender: 'L', code: '3133281064', pob: 'Sumber Sari', dob: '2013-08-22', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 58, name: 'ROSYIDZ FATIYAN AKBAR', gender: 'L', code: '0129582637', pob: 'MAGETAN', dob: '2012-02-02', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 59, name: 'SEFIA ANAS TASYA', gender: 'P', code: '3128887409', pob: 'Magetan', dob: '2012-09-06', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 60, name: 'SELVIA OKTAVIANA EZZA AZAHRA', gender: 'P', code: '0126494918', pob: 'Magetan', dob: '2012-02-02', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  { id: 61, name: 'SITI LATIFAH', gender: 'P', code: '0137912164', pob: 'PONOROGO', dob: '2013-09-12', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 62, name: 'TIARA NAFISA ZAHRA', gender: 'P', code: '0131383168', pob: 'BADUNG', dob: '2013-02-10', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 63, name: 'TIFANY GIZELA PERMATA', gender: 'P', code: '3148118189', pob: 'PONOROGO', dob: '2014-05-04', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 64, name: 'TIKA MAHARANI', gender: 'P', code: '0135428481', pob: 'MAGETAN', dob: '2013-04-07', role: 'siswa', className: 'Kelas VII-B', hasVoted: false },
+  { id: 65, name: 'VALENTINO JULIO SETYA PRATAMA', gender: 'L', code: '3124623853', pob: 'MAGETAN', dob: '2012-07-15', role: 'siswa', className: 'Kelas VIII-A', hasVoted: false },
+  { id: 66, name: 'YORDAN', gender: 'L', code: '3131937945', pob: 'MAGETAN', dob: '2013-05-18', role: 'siswa', className: 'Kelas VII-A', hasVoted: false },
+  { id: 67, name: 'ZAM ZAM FADHILA', gender: 'L', code: '0128005589', pob: 'Magetan', dob: '2012-12-27', role: 'siswa', className: 'Kelas VIII-B', hasVoted: false },
+  
+  // Data Guru & Karyawan (No 68 - 85)
+  { id: 68, name: 'Agus Hariyadi', gender: 'L', code: '. 14', pob: 'Magetan', dob: '1968-08-22', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 69, name: 'Anis Yulia Amanati', gender: 'P', code: '199207212024212022', pob: 'Magetan', dob: '1992-07-21', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 70, name: 'Dini Indah Wismaniar', gender: 'P', code: '199307142024212021', pob: 'Ponorogo', dob: '1993-07-14', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 71, name: 'Edy Sutanto', gender: 'L', code: '198703122024211008', pob: 'Magetan', dob: '1987-03-12', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 72, name: 'Emy Setiawati', gender: 'P', code: '. 03', pob: 'Ponorogo', dob: '1967-03-28', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 73, name: 'Jahdi Bhaktiyar Syarifudin', gender: 'L', code: '198502042011011011', pob: 'Bojonegoro', dob: '1985-02-04', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 74, name: 'Nanik Handayani', gender: 'P', code: '197403282002122002', pob: 'Pacitan', dob: '1974-03-28', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 75, name: 'Novita Icha Sulistiana', gender: 'P', code: '199711262024212024', pob: 'Ponorogo', dob: '1997-11-26', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 76, name: 'Sri Rahayu', gender: 'P', code: '197103272000122002', pob: 'Tangerang', dob: '1971-03-27', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 77, name: 'Sulistyo Tri Yuni Tarini', gender: 'P', code: '198206162024212019', pob: 'Madiun', dob: '1982-06-16', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 78, name: 'Sussana Hadi Suprobo', gender: 'P', code: '196902131998022002', pob: 'Madiun', dob: '1969-02-13', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 79, name: 'Syahri Romadlon', gender: 'L', code: '198805062015041001', pob: 'GRESIK', dob: '1988-05-06', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 80, name: 'Pujianto', gender: 'L', code: '197911222025211030', pob: 'Magetan', dob: '1979-11-22', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 81, name: 'Sri Pudjiati', gender: 'P', code: '197008241996012001', pob: 'MAGETAN', dob: '1970-08-24', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 82, name: 'Sumono', gender: 'L', code: '197204271997021002', pob: 'Magetan', dob: '1972-04-27', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 83, name: 'Winarto', gender: 'L', code: '198005212025211017', pob: 'Magetan', dob: '1980-05-21', role: 'guru', className: 'Guru / Tenaga Pendidik', hasVoted: false },
+  { id: 84, name: 'Dwiyanto Nugroho', gender: 'L', code: '123456', pob: 'Magetan', dob: '1997', role: 'guru', className: 'Tenaga Kependidikan', hasVoted: false },
+  { id: 85, name: 'Jely Eka Wati', gender: 'P', code: '1234567', pob: 'Ponorogo', dob: '1999', role: 'guru', className: 'Tenaga Kependidikan', hasVoted: false },
+];
